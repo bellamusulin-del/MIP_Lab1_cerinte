@@ -1,113 +1,120 @@
-﻿using System;
+﻿
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace MIP_Lab1_cerinte
+namespace MIPLAB1
 {
     public partial class Form1 : Form
     {
-        private int windowMoveStep = 30;
-        private Random randomGenerator = new Random();
+        private Timer timer1 = new Timer();
+        private Random random = new Random();
 
         public Form1()
         {
             InitializeComponent();
+
+            timer1.Interval = 300;
+            timer1.Tick += timer1_Tick;
+
+            startButton.Click += startButton_Click;
+            stopButton.Click += stopButton_Click;
+
+            downButton.Click += downButton_Click;
+            leftButton.Click += leftButton_Click;
+            rightButton.Click += rightButton_Click;
+
+            intervalTextBox.TextChanged += intervalTextBox_TextChanged;
         }
 
-        private void buttonUp_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            string message = "Esti sigur ca vrei sa muti fereastra in sus?";
-            string title = "UP";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            MessageBoxIcon icon = MessageBoxIcon.Warning;
-
-            DialogResult result = MessageBox.Show(message, title, buttons, icon);
-
-            textBoxChoice.Text = result.ToString();
-
-            this.Top = this.Top - windowMoveStep;
+            intervalTextBox.Text = "300";
         }
 
-        private void buttonDown_Click(object sender, EventArgs e)
+        private void upButton_Click(object sender, EventArgs e)
         {
-            string message = "Fereastra se muta in jos.";
-            string title = "DOWN";
-            MessageBoxButtons buttons = MessageBoxButtons.RetryCancel;
-            MessageBoxIcon icon = MessageBoxIcon.Information;
+            DialogResult result = MessageBox.Show(
+                "Do you want to move up?",
+                "UP",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information);
 
-            DialogResult result = MessageBox.Show(message, title, buttons, icon);
+            resultTextBox.Text = result.ToString();
 
-            textBoxChoice.Text = result.ToString();
-
-            this.Top = this.Top + windowMoveStep;
+            Location = new Point(Location.X, Location.Y - 20);
         }
 
-        private void buttonLeft_Click(object sender, EventArgs e)
+        private void downButton_Click(object sender, EventArgs e)
         {
-            string message = "Muti fereastra la stanga?";
-            string title = "LEFT";
-            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-            MessageBoxIcon icon = MessageBoxIcon.Question;
+            DialogResult result = MessageBox.Show(
+                "Do you want to move down?",
+                "DOWN",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning);
 
-            DialogResult result = MessageBox.Show(message, title, buttons, icon);
+            resultTextBox.Text = result.ToString();
 
-            textBoxChoice.Text = result.ToString();
-
-            this.Left = this.Left - windowMoveStep;
+            Location = new Point(Location.X, Location.Y + 20);
         }
 
-        private void buttonRight_Click(object sender, EventArgs e)
+        private void leftButton_Click(object sender, EventArgs e)
         {
-            string message = "Muti fereastra la dreapta?";
-            string title = "RIGHT";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
-            MessageBoxIcon icon = MessageBoxIcon.Error;
+            DialogResult result = MessageBox.Show(
+                "Do you want to move left?",
+                "LEFT",
+                MessageBoxButtons.RetryCancel,
+                MessageBoxIcon.Question);
 
-            DialogResult result = MessageBox.Show(message, title, buttons, icon);
+            resultTextBox.Text = result.ToString();
 
-            textBoxChoice.Text = result.ToString();
-
-            this.Left = this.Left + windowMoveStep;
+            Location = new Point(Location.X - 20, Location.Y);
         }
 
-        private void buttonStart_Click(object sender, EventArgs e)
+        private void rightButton_Click(object sender, EventArgs e)
         {
-            timerColor.Start();
+            DialogResult result = MessageBox.Show(
+                "Do you want to move right?",
+                "RIGHT",
+                MessageBoxButtons.AbortRetryIgnore,
+                MessageBoxIcon.Error);
+
+            resultTextBox.Text = result.ToString();
+
+            Location = new Point(Location.X + 20, Location.Y);
         }
 
-        private void buttonStop_Click(object sender, EventArgs e)
+        private void startButton_Click(object sender, EventArgs e)
         {
-            timerColor.Stop();
+            timer1.Start();
         }
 
-        private void timerColor_Tick(object sender, EventArgs e)
+        private void stopButton_Click(object sender, EventArgs e)
         {
-            int redValue = randomGenerator.Next(256);
-            int greenValue = randomGenerator.Next(256);
-            int blueValue = randomGenerator.Next(256);
-
-            Color randomColor = Color.FromArgb(redValue, greenValue, blueValue);
-
-            this.BackColor = randomColor;
+            timer1.Stop();
         }
 
-        private void textBoxInterval_TextChanged(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            string typedText = textBoxInterval.Text;
+            BackColor = Color.FromArgb(
+                random.Next(256),
+                random.Next(256),
+                random.Next(256));
+        }
 
-            int newInterval;
-            bool isNumber = int.TryParse(typedText, out newInterval);
+        private void intervalTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int interval;
 
-            // Csak pozitív szám esetén változtatjuk meg a Timer intervallumát.
-            if (isNumber == true && newInterval > 0)
+            if (int.TryParse(intervalTextBox.Text, out interval))
             {
-                timerColor.Interval = newInterval;
+                if (interval > 0)
+                {
+                    timer1.Interval = interval;
+                }
             }
-        }
-
-        private void textBoxChoice_TextChanged(object sender, EventArgs e)
-        {
         }
     }
 }
+
 

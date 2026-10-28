@@ -1,11 +1,17 @@
-﻿namespace MIP_Lab1_cerinte
+﻿namespace MIPLAB1
 {
     partial class Form1
     {
-        
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-      de void Dispose(bool disposing)
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
@@ -22,139 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.buttonUp = new System.Windows.Forms.Button();
-            this.buttonLeft = new System.Windows.Forms.Button();
-            this.buttonRight = new System.Windows.Forms.Button();
-            this.buttonDown = new System.Windows.Forms.Button();
-            this.labelChoice = new System.Windows.Forms.Label();
-            this.textBoxChoice = new System.Windows.Forms.TextBox();
-            this.buttonStart = new System.Windows.Forms.Button();
-            this.buttonStop = new System.Windows.Forms.Button();
-            this.labelInterval = new System.Windows.Forms.Label();
-            this.textBoxInterval = new System.Windows.Forms.TextBox();
-            this.timerColor = new System.Windows.Forms.Timer(this.components);
+            this.upButton = new System.Windows.Forms.Button();
+            this.leftButton = new System.Windows.Forms.Button();
+            this.rightButton = new System.Windows.Forms.Button();
+            this.downButton = new System.Windows.Forms.Button();
+            this.resultTextBox = new System.Windows.Forms.TextBox();
+            this.resultLabel = new System.Windows.Forms.Label();
+            this.stopButton = new System.Windows.Forms.Button();
+            this.startButton = new System.Windows.Forms.Button();
+            this.intervalTextBox = new System.Windows.Forms.TextBox();
+            this.intervalLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // buttonUp
+            // upButton
             // 
-            this.buttonUp.Location = new System.Drawing.Point(579, 12);
-            this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(91, 27);
-            this.buttonUp.TabIndex = 0;
-            this.buttonUp.Text = "UP";
-            this.buttonUp.UseVisualStyleBackColor = true;
-            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
+            this.upButton.Location = new System.Drawing.Point(336, 112);
+            this.upButton.Name = "upButton";
+            this.upButton.Size = new System.Drawing.Size(75, 23);
+            this.upButton.TabIndex = 0;
+            this.upButton.Text = "button1";
+            this.upButton.UseVisualStyleBackColor = true;
+            this.upButton.Click += new System.EventHandler(this.upButton_Click);
             // 
-            // buttonLeft
+            // leftButton
             // 
-            this.buttonLeft.Location = new System.Drawing.Point(12, 233);
-            this.buttonLeft.Name = "buttonLeft";
-            this.buttonLeft.Size = new System.Drawing.Size(100, 30);
-            this.buttonLeft.TabIndex = 1;
-            this.buttonLeft.Text = "LEFT";
-            this.buttonLeft.UseVisualStyleBackColor = true;
-            this.buttonLeft.Click += new System.EventHandler(this.buttonLeft_Click);
+            this.leftButton.Location = new System.Drawing.Point(12, 212);
+            this.leftButton.Name = "leftButton";
+            this.leftButton.Size = new System.Drawing.Size(75, 23);
+            this.leftButton.TabIndex = 1;
+            this.leftButton.Text = "button2";
+            this.leftButton.UseVisualStyleBackColor = true;
             // 
-            // buttonRight
+            // rightButton
             // 
-            this.buttonRight.Location = new System.Drawing.Point(1062, 233);
-            this.buttonRight.Name = "buttonRight";
-            this.buttonRight.Size = new System.Drawing.Size(100, 30);
-            this.buttonRight.TabIndex = 2;
-            this.buttonRight.Text = "RIGHT";
-            this.buttonRight.UseVisualStyleBackColor = true;
-            this.buttonRight.Click += new System.EventHandler(this.buttonRight_Click);
+            this.rightButton.Location = new System.Drawing.Point(690, 212);
+            this.rightButton.Name = "rightButton";
+            this.rightButton.Size = new System.Drawing.Size(75, 23);
+            this.rightButton.TabIndex = 2;
+            this.rightButton.Text = "button3";
+            this.rightButton.UseVisualStyleBackColor = true;
             // 
-            // buttonDown
+            // downButton
             // 
-            this.buttonDown.Location = new System.Drawing.Point(559, 486);
-            this.buttonDown.Name = "buttonDown";
-            this.buttonDown.Size = new System.Drawing.Size(111, 35);
-            this.buttonDown.TabIndex = 3;
-            this.buttonDown.Text = "DOWN";
-            this.buttonDown.UseVisualStyleBackColor = true;
-            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
+            this.downButton.Location = new System.Drawing.Point(336, 395);
+            this.downButton.Name = "downButton";
+            this.downButton.Size = new System.Drawing.Size(75, 23);
+            this.downButton.TabIndex = 3;
+            this.downButton.Text = "button4";
+            this.downButton.UseVisualStyleBackColor = true;
             // 
-            // labelChoice
+            // resultTextBox
             // 
-            this.labelChoice.AutoSize = true;
-            this.labelChoice.Location = new System.Drawing.Point(267, 247);
-            this.labelChoice.Name = "labelChoice";
-            this.labelChoice.Size = new System.Drawing.Size(109, 16);
-            this.labelChoice.TabIndex = 4;
-            this.labelChoice.Text = "Optiunea aleasa:";
+            this.resultTextBox.Location = new System.Drawing.Point(405, 235);
+            this.resultTextBox.Name = "resultTextBox";
+            this.resultTextBox.Size = new System.Drawing.Size(100, 22);
+            this.resultTextBox.TabIndex = 4;
             // 
-            // textBoxChoice
+            // resultLabel
             // 
-            this.textBoxChoice.Location = new System.Drawing.Point(394, 244);
-            this.textBoxChoice.Name = "textBoxChoice";
-            this.textBoxChoice.ReadOnly = true;
-            this.textBoxChoice.Size = new System.Drawing.Size(150, 22);
-            this.textBoxChoice.TabIndex = 5;
-            this.textBoxChoice.TextChanged += new System.EventHandler(this.textBoxChoice_TextChanged);
+            this.resultLabel.AutoSize = true;
+            this.resultLabel.Location = new System.Drawing.Point(353, 241);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(45, 16);
+            this.resultLabel.TabIndex = 5;
+            this.resultLabel.Text = "Result";
             // 
-            // buttonStart
+            // stopButton
             // 
-            this.buttonStart.Location = new System.Drawing.Point(440, 164);
-            this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(104, 51);
-            this.buttonStart.TabIndex = 6;
-            this.buttonStart.Text = "START";
-            this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
+            this.stopButton.Location = new System.Drawing.Point(242, 234);
+            this.stopButton.Name = "stopButton";
+            this.stopButton.Size = new System.Drawing.Size(75, 23);
+            this.stopButton.TabIndex = 6;
+            this.stopButton.Text = "STOP";
+            this.stopButton.UseVisualStyleBackColor = true;
             // 
-            // buttonStop
+            // startButton
             // 
-            this.buttonStop.Location = new System.Drawing.Point(673, 164);
-            this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(107, 51);
-            this.buttonStop.TabIndex = 7;
-            this.buttonStop.Text = "STOP";
-            this.buttonStop.UseVisualStyleBackColor = true;
-            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
+            this.startButton.Location = new System.Drawing.Point(242, 203);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(75, 23);
+            this.startButton.TabIndex = 7;
+            this.startButton.Text = "START";
+            this.startButton.UseVisualStyleBackColor = true;
             // 
-            // labelInterval
+            // intervalTextBox
             // 
-            this.labelInterval.AutoSize = true;
-            this.labelInterval.Location = new System.Drawing.Point(575, 247);
-            this.labelInterval.Name = "labelInterval";
-            this.labelInterval.Size = new System.Drawing.Size(95, 16);
-            this.labelInterval.TabIndex = 8;
-            this.labelInterval.Text = "Perioada (ms):";
+            this.intervalTextBox.Location = new System.Drawing.Point(438, 203);
+            this.intervalTextBox.Name = "intervalTextBox";
+            this.intervalTextBox.Size = new System.Drawing.Size(100, 22);
+            this.intervalTextBox.TabIndex = 8;
             // 
-            // textBoxInterval
+            // intervalLabel
             // 
-            this.textBoxInterval.Location = new System.Drawing.Point(721, 241);
-            this.textBoxInterval.Name = "textBoxInterval";
-            this.textBoxInterval.Size = new System.Drawing.Size(80, 22);
-            this.textBoxInterval.TabIndex = 9;
-            this.textBoxInterval.Text = "300";
-            this.textBoxInterval.TextChanged += new System.EventHandler(this.textBoxInterval_TextChanged);
-            // 
-            // timerColor
-            // 
-            this.timerColor.Interval = 300;
-            this.timerColor.Tick += new System.EventHandler(this.timerColor_Tick);
+            this.intervalLabel.AutoSize = true;
+            this.intervalLabel.Location = new System.Drawing.Point(353, 203);
+            this.intervalLabel.Name = "intervalLabel";
+            this.intervalLabel.Size = new System.Drawing.Size(79, 16);
+            this.intervalLabel.TabIndex = 9;
+            this.intervalLabel.Text = "Interval (ms)";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1174, 548);
-            this.Controls.Add(this.buttonUp);
-            this.Controls.Add(this.buttonLeft);
-            this.Controls.Add(this.buttonRight);
-            this.Controls.Add(this.buttonDown);
-            this.Controls.Add(this.labelChoice);
-            this.Controls.Add(this.textBoxChoice);
-            this.Controls.Add(this.buttonStart);
-            this.Controls.Add(this.buttonStop);
-            this.Controls.Add(this.labelInterval);
-            this.Controls.Add(this.textBoxInterval);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.intervalLabel);
+            this.Controls.Add(this.intervalTextBox);
+            this.Controls.Add(this.startButton);
+            this.Controls.Add(this.stopButton);
+            this.Controls.Add(this.resultLabel);
+            this.Controls.Add(this.resultTextBox);
+            this.Controls.Add(this.downButton);
+            this.Controls.Add(this.rightButton);
+            this.Controls.Add(this.leftButton);
+            this.Controls.Add(this.upButton);
             this.Name = "Form1";
-            this.Text = "Lab 1 - Cerinta 1-5";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,16 +152,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonUp;
-        private System.Windows.Forms.Button buttonLeft;
-        private System.Windows.Forms.Button buttonRight;
-        private System.Windows.Forms.Button buttonDown;
-        private System.Windows.Forms.Label labelChoice;
-        private System.Windows.Forms.TextBox textBoxChoice;
-        private System.Windows.Forms.Button buttonStart;
-        private System.Windows.Forms.Button buttonStop;
-        private System.Windows.Forms.Label labelInterval;
-        private System.Windows.Forms.TextBox textBoxInterval;
-        private System.Windows.Forms.Timer timerColor;
+        private System.Windows.Forms.Button upButton;
+        private System.Windows.Forms.Button leftButton;
+        private System.Windows.Forms.Button rightButton;
+        private System.Windows.Forms.Button downButton;
+        private System.Windows.Forms.TextBox resultTextBox;
+        private System.Windows.Forms.Label resultLabel;
+        private System.Windows.Forms.Button stopButton;
+        private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.TextBox intervalTextBox;
+        private System.Windows.Forms.Label intervalLabel;
     }
 }
+
